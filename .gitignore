@@ -1,0 +1,5 @@
+*.pyc
+*local_*
+.venv
+.DS_Store
+db.sqllite3
