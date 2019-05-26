@@ -1,0 +1,26 @@
+body, html {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, #3CB4AA,#1F5C59);
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+}
+
+img.navbar-brand{
+  height: 40px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.modal-header-error {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a"";
+}

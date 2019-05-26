@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+  <head>
+    <title>Catálogo Projetos Sociais | Belo Horizonte - MG</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/ongs.css' %}">
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% block navbar %}{% endblock %}
+
+    {% if messages %}
+        <div class="container mt-2 mb-2 pb-0">
+            <div id="messages">
+                {% for message in messages %}
+                    <div class="alert alert-dark {{ message.tags }} mb-0 " role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>
