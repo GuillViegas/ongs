@@ -20,7 +20,76 @@ img.navbar-brand{
 }
 
 .modal-header-error {
-    color: #fff;
-    background-color: #d9534f;
-    border-color: #d43f3a"";
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a"";
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: AvenirLTStd-Book;
+  text-align: center;
+}
+
+input{
+  margin-bottom: 5px;
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Black';
+  src: url('../../static/fonts/AvenirLTStd-Black.otf')  format("truetype"), local('AvenirLTStd-Black');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-BlackOblique';
+  src: url('../../static/fonts/AvenirLTStd-BlackOblique.otf')  format("truetype"), local('AvenirLTStd-BlackOblique');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Book';
+  src: url('../../static/fonts/AvenirLTStd-Book.otf')  format("truetype"), local('AvenirLTStd-Book');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-BookOblique';
+  src: url('../../static/fonts/AvenirLTStd-BookOblique.otf')  format("truetype"), local('AvenirLTStd-BookOblique');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Heavy';
+  src: url('../../static/fonts/AvenirLTStd-Heavy.otf')  format("truetype"), local('AvenirLTStd-Heavy');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-HeavyOblique';
+  src: url('../../static/fonts/AvenirLTStd-HeavyOblique.otf')  format("truetype"), local('AvenirLTStd-HeavyOblique');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Light';
+  src: url('../../static/fonts/AvenirLTStd-Light.otf')  format("truetype"), local('AvenirLTStd-Light');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-LightOblique';
+  src: url('../../static/fonts/AvenirLTStd-LightOblique.otf')  format("truetype"), local('AvenirLTStd-LightOblique');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Medium';
+  src: url('../../static/fonts/AvenirLTStd-Medium.otf')  format("truetype"), local('AvenirLTStd-Medium');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-MediumOblique';
+  src: url('../../static/fonts/AvenirLTStd-MediumOblique.otf')  format("truetype"), local('AvenirLTStd-MediumOblique');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Oblique';
+  src: url('../../static/fonts/AvenirLTStd-Oblique.otf')  format("truetype"), local('AvenirLTStd-Oblique');
+}
+
+@font-face {
+  font-family: 'AvenirLTStd-Oblique';
+  src: url('../../static/fonts/AvenirLTStd-Roman.otf')  format("truetype"), local('AvenirLTStd-Roman');
 }

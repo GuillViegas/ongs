@@ -1,5 +1,25 @@
+.container-header{
+    background-image: linear-gradient(to right, #2c2c2e, #322d35);
+    height: 150px;
+    position: relative;
+}
+    .container-header h1{
+        color: aliceblue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+
 .container-content{
     background-color: aliceblue;
     padding: 15px;
     min-height: 100%;
 }
+
+    .container-content .form-error{
+        margin-top: 4px;
+        font-size: 12px;
+        color: red;
+    }

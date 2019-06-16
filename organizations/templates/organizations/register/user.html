@@ -1,0 +1,22 @@
+<h2>Cadastre-se sua organização no ONGs e dê visibilidade a sua iniciativa de impacto</h2>
+<form id="form-user-register" method="POST">
+    {% csrf_token %}
+    <br>
+    <input id="username" name="username" type="text" class="form-control" placeholder="Nome de usuário">
+    <input id="first_name" name="first_name" type="text" class="form-control" placeholder="Nome">
+    <input id="last_name" name="last_name" type="text" class="form-control" placeholder="Sobrenome">
+    <input id="phone" name="phone" type="text" class="form-control" placeholder="Telefone de Contato">
+    <input id="function" name="function" type="text" class="form-control" placeholder="Função que ocupa">
+    <div class="form-error username-error"></div>
+    <br>
+    <input id="email" name="email" type="text" class="form-control" placeholder="E-mail">
+    <input id="email_confirmation" type="text" class="form-control" placeholder="Confirmação de e-mail">
+    <div class="form-error email-error"></div>    
+    <br>
+    <input id="password" name="password" type="password" class="form-control" placeholder="Senha">
+    <input id="password_confirmation" type="password" class="form-control" placeholder="Confirmação de senha">
+    <div class="form-error password-error"></div>
+    <br>
+    <br>
+    <button id="register-user" type="button" class="btn btn-dark">Cadastrar</button>
+</form>

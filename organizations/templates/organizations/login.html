@@ -3,6 +3,8 @@
 
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{% static 'organizations/css/login.css' %}">
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'organizations/js/login.js' %}"></script>
 {% endblock %}
 
 {% block navbar %}
@@ -11,6 +13,12 @@
 
 {% block content %}
 <div class="container">
-    
+    <form id="form-login" method="POST">
+        {% csrf_token %}
+        <input id="username" name="username" type="text" class="form-control" placeholder="Nome de usuário">
+        <input id="password" name="password" type="password" class="form-control" placeholder="Senha">
+        <br>
+        <button id="login-button" type="button" class="btn btn-dark">Entrar</button>
+    </form>
 </div>
 {% endblock %}
