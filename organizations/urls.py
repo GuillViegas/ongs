@@ -5,8 +5,9 @@ app_name = 'organizations'
 urlpatterns = [
     path('login', credentials.login, name='login'),
     path('logout', credentials.logout, name='logout'),
-    path('register', include([
+    path('register/', include([
         path('', credentials.register, name='register'),
-        path('/user', credentials.registerUser, name='register_user'),
+        path('user', credentials.registerUser, name='register_user'),
+        path('organization', credentials.registerOrganization, name='register_organization'),
     ])),
 ]

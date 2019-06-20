@@ -22,20 +22,30 @@ function validateUserForm(){
 
 (function(){
 
-    $.get('/ongs/organizations/register/user', function(response){
-        $('.container-content').html(response['content_html']);
+    // $.get('/ongs/organizations/register/user', function(response){
+    //     $('.content-body').html(response['content_html']);
 
-        $('button#register-user').click(function(){
-            let errors = validateUserForm();
-            if(Object.keys(errors).length > 0){
-                $('.username-error').html('<p>'+errors['username']+'</p>');
-                $('.email-error').html('<p>'+errors['email']+'</p>');
-                $('.password-error').html('<p>'+errors['password']+'</p>');
-            } else {
-                $.post('/ongs/organizations/register/user', $('#form-user-register').serialize(), function(response){
-                    console.log(response);
-                })
-            }
-        });
+    //     $('button#register-user').click(function(){
+    //         let errors = validateUserForm();
+    //         if(Object.keys(errors).length > 0){
+    //             $('.username-error').html('<p>'+errors['username']+'</p>');
+    //             $('.email-error').html('<p>'+errors['email']+'</p>');
+    //             $('.password-error').html('<p>'+errors['password']+'</p>');
+    //         } else {
+    //             $.post('/ongs/organizations/register/user', $('#form-user-register').serialize(), function(response){
+    //                 if(!response['error']){
+    //                     setCookie('ongs_session', btoa(JSON.stringify(response['session'])), response['session'].expires_at);
+
+    //                     $.get('/ongs/organizations/register/organization', function(response){
+    //                         $('.content-body').html(response['content_html']);
+    //                     })
+    //                 }
+    //             })
+    //         }
+    //     });
+    // })
+
+    $.get('/ongs/organizations/register/organization', function(response){
+        $('.content-body').html(response['content_html']);
     })
 })();

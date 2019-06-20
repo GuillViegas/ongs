@@ -53,8 +53,8 @@ class Organization(models.Model):
             return dict(ACTION_AREAS)[self]
 
     name = models.CharField(max_length=120, null=True, blank=True)
-    site = models.CharField(max_length=100, null=True, blank=True)
-    presentation = models.CharField(max_length=500, null=True, blank=True)
+    site = models.URLField(null=True, blank=True)
+    presentation = models.CharField(max_length=1500, null=True, blank=True)
     phones = ArrayField(
         models.CharField(max_length=30, null=True, blank=True),
         size=3,
@@ -62,7 +62,7 @@ class Organization(models.Model):
     email = models.EmailField(unique=True)
     address = models.ForeignKey(Address, related_name='organization', on_delete=models.CASCADE)
     action_area = models.IntegerField(choices=ActionArea.choices())
-    logo_path = models.CharField(max_length=255)
+    logo = models.ImageField(upload_to='logos', null=True, blank=True)
 
 
 class OrganizationMedia(models.Model):
@@ -89,4 +89,4 @@ class OrganizationMedia(models.Model):
     organization = models.ForeignKey(Organization, related_name='medias', on_delete=models.CASCADE)
     media_type = models.IntegerField(choices=MediaType.choices())
     type_name = models.CharField(max_length=64, null=True, help_text='Used for type "other"', blank=True)
-    address = models.CharField(max_length=512)
+    path = models.CharField(max_length=512)

@@ -5,6 +5,7 @@ from django.http import HttpResponse, JsonResponse
 from django.template import RequestContext
 
 from core.models.employees import Employee, EmployeePassword, EmployeeSession
+from organizations.forms.organization import OrganizationRegister
 
 from lib.encryptation import encrypt, check_pw
 
@@ -40,13 +41,26 @@ def registerUser(request):
 
         pw = EmployeePassword.objects.create(employee=employee, password=encrypt(register_user.get('password')))
 
+        session = EmployeeSession(employee=employee)
+        session.save()
+
+        print(session.get_values())
+
         return JsonResponse({
-            'id': employee.id,
-            'email': employee.email,
-            'first_name': employee.name,
-            'last_name': employee.last_name,
-            'phone': employee.phone
+            'session': session.get_values()['value']
         })
+
+
+def registerOrganization(request):
+    if request.method == "GET":
+        data = {}
+
+        data['content_html'] = render(request, 'organizations/register/organization.html', {
+            'user': request.GET.get(''),
+            'form': OrganizationRegister,
+            }).content.decode("utf-8") 
+        return HttpResponse(json.dumps(data), content_type='application/json')
+        
     
 
 def register(request):

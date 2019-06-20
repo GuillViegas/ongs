@@ -2,6 +2,7 @@
     background-image: linear-gradient(to right, #2c2c2e, #322d35);
     height: 150px;
     position: relative;
+    margin-bottom: 10px;
 }
     .container-header h1{
         color: aliceblue;
