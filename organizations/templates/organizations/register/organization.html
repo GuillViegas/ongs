@@ -1,8 +1,9 @@
-<form id="form-user-register" method="POST">
+<form id="form-organization-register" method="POST">
     {% csrf_token %}
     <br>
         {{form}}
+        <input type="hidden" name="session_uuid" id="session_uuid" value=""/>
     <br>
     <br>
-    <button id="register-user" type="button" class="btn btn-dark">Cadastrar</button>
+    <button id="register-organization" type="button" class="btn btn-dark">Cadastrar</button>
 </form>

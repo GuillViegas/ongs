@@ -56,7 +56,7 @@ class OrganizationRegister(forms.Form):
         )
     )
 
-    action_area = forms.MultipleChoiceField(
+    action_areas = forms.MultipleChoiceField(
         required=True,
         label='Áreas de atuação',
         choices=Organization.ActionArea.choices(),
@@ -65,3 +65,88 @@ class OrganizationRegister(forms.Form):
     )
 
     logo = forms.ImageField()
+
+class AddressForm(forms.Form): 
+    cep = forms.CharField(
+        label="Cep",
+        max_length=9, 
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'cep',
+                'class': 'form-control'
+            }
+        )
+    )
+
+    location = forms.CharField(
+        label="Endereço",
+        max_length=150,
+        required=False,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Endereço',
+                'class': 'form-control'
+            }
+        )
+    )
+
+    number = forms.CharField(
+        label="Número",
+        max_length=10,
+        required=False,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Número',
+                'class': 'form-control'
+            }
+        )
+    )
+    
+    complement = forms.CharField(
+        label="Complemento",
+        max_length=256,
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Complemento',
+                'class': 'form-control'
+            }
+        )
+    )
+
+    neighborhood = forms.EmailField(
+        label="Bairro",
+        max_length=50,
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Bairro',
+                'class': 'form-control'
+            }
+        )
+    )
+
+    city = forms.EmailField(
+        label="Cidade",
+        max_length=50,
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Cidade',
+                'class': 'form-control'
+            }
+        )
+    )
+
+    state = forms.EmailField(
+        label="Estado",
+        max_length=50,
+        required=True,
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Estado',
+                'class': 'form-control'
+            }
+        )
+    )

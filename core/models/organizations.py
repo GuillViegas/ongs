@@ -15,7 +15,7 @@ class Address(models.Model):
     complement = models.CharField(max_length=256, null=True, blank=True)
     neighborhood = models.CharField(max_length=50, null=True, blank=True)
     city = models.CharField(max_length=50)
-    state = models.CharField(max_length=2)
+    state = models.CharField(max_length=50)
 
     def __str__(self):
         return 'Address #{}: {}, {} - {}'.format(self.id, self.city, self.state, self.location)
@@ -60,9 +60,27 @@ class Organization(models.Model):
         size=3,
     )
     email = models.EmailField(unique=True)
-    address = models.ForeignKey(Address, related_name='organization', on_delete=models.CASCADE)
-    action_area = models.IntegerField(choices=ActionArea.choices())
+    address = models.ForeignKey(
+        Address, 
+        related_name='organization', 
+        on_delete=models.CASCADE, 
+        null=True, blank=True)
+    action_areas = ArrayField(
+        models.IntegerField(choices=ActionArea.choices()),
+        size=3,
+        null=True, blank=True
+    )
     logo = models.ImageField(upload_to='logos', null=True, blank=True)
+
+    def get_values(self):
+        return {
+            'value': {
+                'id': self.id,
+                'name': self.name,
+                'email': self.email,
+                'site': self.site
+            }
+        }
 
 
 class OrganizationMedia(models.Model):
